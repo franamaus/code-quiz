@@ -1,8 +1,7 @@
 // timer
 var timerEl = document.querySelector("#timer");
 var wrapperEl = document.querySelector("#wrapper");
-var instructionFormEl = document.querySelector(".instruction-form");
-var questionFormEl = document.querySelector(".questions-form");
+var formEl = document.querySelector("main");
 
 const quizQuestions = [
     {
@@ -52,29 +51,11 @@ const quizQuestions = [
     }
   ];
 
-// var countdown = function() {
-//     formEl.remove();
-//     // questionCardsEl();
-    
-    
-
-//     var timeInterval = setInterval(function() {
-//         timerEl.textContent = timeLeft;
-//         timeLeft--;
-         
-//         // when timer hits zero, stop countdown
-//         if (timeLeft === -1) {  
-//           clearInterval(timeInterval);
-//           timerEl.innerHTML="Time\'s up!";
-//         }
-    
-//     }, 1000);
-
-// }
-
 var startButtonHandler = function() {
-    //formEl.remove(".instruction-card"); // remove instructions
-    questionCardsEl();
+  formEl.innerHTML = "";
+    // var item = document.getElementById("main")
+    // item.removeChild(); // remove instructions
+    // questionCardsEl();
 
     var globalCounter = 75
     var count = 0
@@ -136,29 +117,28 @@ var questionCardsEl = function () {
     // formEl.appendChild(startButtonEl);
 }
 
-// instruction card
-
-
 var loadPage = function() {
-    // create instruction card
+    // make div
     var formContainerEl = document.createElement("div");
-    formContainerEl.className = "instruction-card";
-    formContainerEl.innerHTML = "<h2 class='instruction-heading'>" 
+    // create instruction card
+    var instructionFormEl = document.createElement("section");
+    instructionFormEl.className = "instruction-card";
+    instructionFormEl.innerHTML = "<h2 class='instruction-heading'>" 
         + "Coding Quiz Challenge" 
         + "</h2><span class='instruction-body'>" 
         + "Try to answer the following code-releated questions within the time limit."
         + "<br>"
         + "Keep in mind that incorrect answers will penalize your score/time by ten seconds!"
         + "</span>";
-    formEl.appendChild(formContainerEl);
+    formContainerEl.appendChild(instructionFormEl);
     // create start button
     var startButtonEl = document.createElement("button");
     startButtonEl.textContent = "Start Quiz";
     startButtonEl.className = "btn start-btn";
-    formEl.appendChild(startButtonEl);
+    formContainerEl.appendChild(startButtonEl);
+    // append to formEl
+    formEl.appendChild(formContainerEl);
 }
-
-
 
 
 wrapperEl.addEventListener("click", startButtonHandler);

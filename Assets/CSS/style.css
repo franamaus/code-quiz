@@ -41,7 +41,7 @@ main {
 }
 
 .instruction-card,
-.question-card {
+.questions-card {
     text-align: center;
     padding: 60px 0;
 }
