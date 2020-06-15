@@ -8,27 +8,29 @@
         <link rel="stylesheet" href="./Assets/CSS/style.css" />
     </head>
 
-    <body>
-        <div class="wrapper">
+    <body class="wrapper" id="wrapper">
+        <div>
             <header>
                 <h3 id="timer"></h3>
             </header>
             
-            <div class="questions">
-                <!-- <textarea readonly id="password" placeholder="Your Secure Password"
-                aria-label="Generated Password"
-                ></textarea> -->
-            </div>
-    
-            <!-- <div class="anwers">
-                <button id="generate" class="btn">Generate Password</button>
-            </div> -->
-    
+            <main class="form-frame">
+                <section class="instruction-form"></section>
+                <section class="questions-form"></section>
+                <!-- <section class="question-form-2"></section>
+                <section class="question-form-3"></section>
+                <section class="question-form-4"></section>
+                <section class="question-form-5"></section> -->
+                <section class="result-form"></section>
+                <section class="save-score-form"></section>
+                <section class="high-score-form"></section>
+            </main>
+
             <footer>
-                <h3 id="hi-scores"></h3>
+                <h3 class="high-scores">View high scores</h3>
             </footer>
         </div>
 
-        <script src="./Assets/script.js"></script>
+        <script src="./Assets/JS/script.js"></script>
     </body>
 </html>
